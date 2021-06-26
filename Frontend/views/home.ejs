@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    Home
+  </title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@300&family=Roboto+Mono:wght@200;300&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/home.css" media="all">
+</head>
+
+<body class="light flex-column">
+
+
+  <nav class="u-full-width no-print">
+    <div class="top-nav-holder">
+      <div class="container">
+        <div class="layer-holder top-navigation">
+          <div class="layer flex flex-space-between" style="align-items: center; height: 50px;">
+            <div class="flex" style="align-items: center">
+
+              <div class="show-from-desktop desktop-links">
+                <a href="/" class="nav-color">
+
+                  <strong><h3 id="ab">Stockify</h3></strong>
+
+                <a href="http://localhost:3100/explore">
+                  <strong><h3 id="ab">Explore</h3></strong>
+                </a>
+
+              </div>
+            </div>
+
+
+            <div class="flex flex-gap-8 show-from-desktop" style="margin: 4px" id="login">
+              <a href="/login/" class="button account btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">
+                <i class="icon-user-line blue-icon"></i>
+                Login
+              </a>
+              <a href="/register/" class="button account button-secondary btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">
+                Sign up
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    </div>
+
+  </nav>
+  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="defaultForm-email" class="form-control validate" placeholder="Email-id">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Email ID</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="password" id="defaultForm-pass" class="form-control validate" placeholder="***********">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="orangeForm-name" class="form-control validate" placeholder="Username">
+          <label data-error="wrong" data-success="right" for="orangeForm-name">Enter our name</label>
+        </div>
+        <div class="md-form mb-5">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="orangeForm-email" class="form-control validate" placeholder="Email-id">
+          <label data-error="wrong" data-success="right" for="orangeForm-email">Enter your email</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-lock prefix grey-text"></i>
+          <input type="password" id="orangeForm-pass" class="form-control validate" placeholder="************">
+          <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-deep-orange ">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <main class="flex-grow">
+    <div class="container">
+
+
+
+      <div class="heading-area"></div>
+
+
+
+      <div class="flex flex-column" style="max-width: 650px; margin: 40px auto; min-height: 60vh; text-align: center; justify-content: center; padding: 12px;">
+
+        <img class="sealImage" alt="Image of Seal" src="/logo.JPG">
+
+
+
+
+        <div class="p-5 rounded shadow" style="margin-top: 30px;">
+
+
+          <div style="margin-top: 1%">
+            <div>
+              <form class= "ui form" action="/companypage" method="POST">
+              <input type="text" id="myInput" placeholder="Search for a company and press Enter..." onkeyup="searchFunc()" name="input">
+              </form>
+              
+            </div>
+
+            
+          </div>
+        </div>
+
+      </div>
+
+  </main>
+
+
+  
+  <script src="/static/js/polyfill.c565c6038999.js"></script>
+  <script src="/static/js/dialog-polyfill.min.2b5bf9a032d2.js"></script>
+  <script src="/static/js/utils.8a9ae8ecd962.js"></script>
+  <script src="/static/js/modal.0d25ffd7c80c.js"></script>
+  <script src="/static/js/typeahead.6398a86e0088.js"></script>
+  <script src="/static/js/filter.component.5add9ef3b7a9.js"></script>
+
+
+  <script src="/static/js/navbar.3fe7f0f4a630.js"></script>
+  <script src="/static/js/company.search.ccfa066b5c03.js"></script>
+  <script>
+    const searchFunc = () =>{
+      
+      let filter = document.getElementById('myInput').value.toUpperCase();
+      let ul = document.getElementById('UL');
+      let li = document.getElementsByTagName('li');
+      console.log(li);
+      for(var i=0;i<li.length;i++){
+        let a = li[i].getElementsByTagName('a')[0];
+        let textValue = a.textContent || a.innerHTML;
+        if(textValue.toUpperCase().indexOf(filter)>-1){
+            li[i].style.display = '';
+        }else{
+          li[i].style.display = 'none';
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>

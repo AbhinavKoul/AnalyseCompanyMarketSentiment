@@ -1,0 +1,134 @@
+<html>
+
+<head>
+  <title><%=company%></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/companypage.css">
+</head>
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Stockify</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3100">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3100/explore">Explore</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-success" id="tweets" >Analyse Tweets Now</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="something">
+    <p>ITC</p>
+    <hr id="style-two">
+  </div>
+  <div id="piechart" style="float:right;"></div>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', {'packages':['corechart']});
+    // google.charts.setOnLoadCallback(drawChart(50,50));
+    google.setOnLoadCallback(function() { drawChart(50,50); });
+    
+    // Draw the chart and set the chart values
+    function drawChart(pos, neg) {
+      var pos=pos, neg=neg;
+      var posArr = ['Positive' , pos];
+      var negArr = ['Negative' , neg];
+      console.log(posArr);
+      var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      posArr,negArr
+    ]);
+    
+      // Optional; add a title and set the width and height of the chart
+      var options = {'title':'Tweets Analysis', 'width':550, 'height':600, 'fontSize':18};
+    
+      // Display the chart inside the <div> element with id="piechart"
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart.draw(data, options);
+    }
+    </script>
+  <div class="boxes">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container" id="leftbox">
+      <div id="tradingview_c1a45"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+      <script type="text/javascript">
+        new TradingView.widget({
+          "width": 980,
+          "height": 610,
+          "symbol": "BSE:<%= company%>",
+          "interval": "D",
+          "timezone": "Etc/UTC",
+          "theme": "light",
+          "style": "1",
+          "locale": "in",
+          "toolbar_bg": "#f1f3f6",
+          "enable_publishing": false,
+          "allow_symbol_change": true,
+          "container_id": "tradingview_c1a45"
+        });
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+    <div id=”bottom-right”>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container" id="rightbox">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+        {
+          "interval": "1m",
+          "width": 425,
+          "isTransparent": false,
+          "height": 450,
+          "symbol": "BSE:<%= company%>",
+          "showIntervalTabs": true,
+          "locale": "in",
+          "colorTheme": "light"
+        }
+      </script>
+    </div>
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+   </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $("#tweets").click(function(event){
+      event.preventDefault();
+      var company = '<%- JSON.stringify(company) %>';
+      var id = 1;
+      var url = `http://localhost:4020/analyseCompany?name=${company}`;
+      //var url = `http://localhost:4020/companyData?id=${id}`;
+      console.log("adfasf",url);
+      $.ajax({
+        type: 'GET',
+        url: url  ,
+        success: function(order) {
+        console.log(order)
+        google.setOnLoadCallback(function() { drawChart(order.Positive,order.Negative); });
+      }
+    });
+
+    });
+//    function tweetanalyser(){
+//         console.log("huuuuu")
+     
+// }
+  </script>
+</body>
+
+</html>
