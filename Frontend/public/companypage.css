@@ -1,0 +1,88 @@
+p{
+          font-family: Raleway;
+          padding-top: 50px;
+          padding-left: 50px;
+          
+        }
+h3{
+  padding-left: 50px;
+}
+.btn-success {
+  margin-top: 15;
+}
+#rightbox
+{
+right: 0;
+margin-top: 350px;
+bottom: 0;
+position: relative;
+}
+hr.style-two{
+          border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+    #nav{
+      background-color: #030E1A !important;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .navbar{
+      height: 50px;
+    }
+    .navbar .nav-item .dropdown-menu .dropdown-item{
+      color: 52057b !important;
+    }
+    .nav-item{
+      position: relative;
+      z-index: 0;
+      transition: 0.5s all;
+    }
+    .nav-item:hover{
+      background-color: #892cdc;
+      z-index: 1;
+      transform: scale(1.05);
+      transition: 0.7s all;
+    }
+    
+      #twitter-feed {
+        width: 300px;
+        border: 2px solid #CCC;
+      }
+  
+      p {
+        border-bottom: 1px dotted #CCC;
+        padding: 10px 5px;
+        margin: 0px;
+        line-height: 21px;
+      }
+      #bottom-right
+      {
+        height: auto;
+        width: auto;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      }
+      #piechart{
+        position:absolute;
+        right: -100;
+        top: 0;
+      }
+  
+      p.right {
+        border: 0px none;
+      }
+  
+      .something {
+        padding:none;
+      }
+  
+      .boxes {
+        display: flex;
+      }
+  
+      #leftbox {
+        float: left;
+        width: 80%;
+  
+      }
